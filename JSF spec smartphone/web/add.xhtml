@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add Form</title>
+    </h:head>
+    <h:body>
+        <h1>Add Spek Record Form</h1>
+        
+        <h:form enctype="multipart/form-data">
+            <h:inputHidden value="#{projekmyspek.id}" id="id"/>
+            Network : <h:inputText value="#{projekmyspek.network}" id="network"/><br/><br/>
+            Launch : <h:inputText value="#{projekmyspek.launch}" id="launch"/><br/><br/>
+            Display : <h:inputText value="#{projekmyspek.display}" id="display"/><br/><br/>
+            Platform : <h:inputText value="#{projekmyspek.platform}" id="platform"/><br/><br/>
+            Memory : <h:inputText value="#{projekmyspek.memory}" id="memory"/><br/><br/>
+            Main Camera : <h:inputText value="#{projekmyspek.maincamera}" id="maincamera"/><br/><br/>
+            Selfie Camera : <h:inputText value="#{projekmyspek.selfiecamera}" id="selfiecamera"/><br/><br/>
+            Sound : <h:inputText value="#{projekmyspek.sound}" id="sound"/><br/><br/>
+            Comms : <h:inputText value="#{projekmyspek.comms}" id="comms"/><br/><br/>
+            Features : <h:inputText value="#{projekmyspek.features}" id="features"/><br/><br/>
+            Battery : <h:inputText value="#{projekmyspek.battery}" id="battery"/><br/><br/>
+            Misc : <h:inputText value="#{projekmyspek.misc}" id="misc"/><br/><br/>
+            Access Admin : <h:inputText value="#{projekmyspek.username}" id="username"/><br/><br/>
+
+                <label for="image">recipe image</label>
+                <h:inputFile value="#{projekmyspek.image}" id="image">
+                    <f:passThroughAttribute name="accept" value="image/png"/>
+                </h:inputFile>
+                <h:commandButton action="#{projekmyspek.addImage()}" value="submit"></h:commandButton>
+            <br/><br/>
+            <h:outputText value="#{projekmyspek.msg}" id="msg"/>
+            <br/><br/>
+            <h:commandLink value="Kembali" action="index?faces-redirect=true" onclick=""/>
+        </h:form><br/>
+    </h:body>
+</html>

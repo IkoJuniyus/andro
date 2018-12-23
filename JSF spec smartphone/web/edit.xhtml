@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"       
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"       
+      xmlns:f="http://xmlns.jcp.org/jsf/core">     
+    <h:head>         
+        <title>Edit Form</title>     </h:head>     
+    <h:body>         
+        <h1>Edit spek Record Form</h1>   
+        
+                ####edit belum
+        
+        <h:form>             Select spek ID:               
+            <h:selectOneMenu value="#{projekmyspek.selectedspek}">
+                <f:selectItem itemValue="0" itemLabel="0"/>  
+                <f:selectItems value="#{projekmyspek.allStudentID}"/>                 
+                <f:ajax event="change" render="id nama email msg" listener="#{student.infospekid()}"/> 
+            </h:selectOneMenu><br/><br/>
+            ID: <h:inputText value="#{projekmyspek.id}" id="id" readonly="true"/>
+            <br/><br/>
+            Nama: <h:inputText value="#{projekmyspek.nama}" id="nama"/>
+            <br/><br/>
+            Email: <h:inputText value="#{projekmyspek.email}" id="email"/>
+            <br/><br/>
+            <h:commandButton value="Update" action="#{projekmyspek.updateData()}"/>
+            <h:commandButton value="Delete" action="#{projekmyspek.deleteData()}"/>
+            <br/><br/>                          
+            <h:outputText value="#{projekmyspek.msg}" id="msg"/>                          
+            <br/><br/>                          
+            <h:commandLink value="Kembali" action="showall?faces-redirect=true"/>                      
+        </h:form>     
+    </h:body> 
+</html> 
+ 
